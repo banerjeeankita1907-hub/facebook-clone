@@ -2,7 +2,7 @@
 
 A responsive, local-first community feed prototype built with vanilla JavaScript. Compose posts, search and filter the feed, react to updates, and reply in context — with no account, server, build step, or third-party runtime dependency.
 
-> The GitHub repository was previously named `facebook-clone`; the application is branded **CampusLoop**. It is an independent learning project and is not affiliated with or endorsed by Meta or Facebook.
+> The GitHub repository is currently named `facebook-clone`; the application is branded **CampusLoop**. The repository slug is inherited from an empty starter and should be renamed to `campusloop` in GitHub settings when repository rename access is available. It is an independent learning project and is not affiliated with or endorsed by Meta or Facebook.
 
 ## Features
 
