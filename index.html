@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a2d">
+  <meta name="description" content="CampusLoop is a local-first social feed prototype for small communities.">
+  <title>CampusLoop — your community, in the loop</title>
+  <link rel="stylesheet" href="./src/styles.css">
+  <script type="module" src="./src/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to feed</a>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="CampusLoop home"><span class="brand-mark">C</span><span>campus<span class="brand-accent">loop</span></span></a>
+    <p class="topbar-note">A small-space social prototype</p>
+    <span class="local-indicator"><span aria-hidden="true"></span> Stored on this device</span>
+  </header>
+
+  <main id="main" class="layout">
+    <aside class="sidebar" aria-label="Community navigation">
+      <section class="profile-card">
+        <div class="avatar avatar-large" aria-hidden="true">Y</div>
+        <div><p class="eyebrow">YOUR SPACE</p><h2>Welcome in</h2><p class="muted">Share something useful, curious, or kind.</p></div>
+      </section>
+      <nav class="side-nav" aria-label="Feed filters">
+        <p class="eyebrow">YOUR FEED</p>
+        <button class="nav-filter is-active" type="button" data-filter="all"><span aria-hidden="true">◈</span> Everyone <span class="nav-count" id="all-count">0</span></button>
+        <button class="nav-filter" type="button" data-filter="mine"><span aria-hidden="true">◎</span> My posts</button>
+        <button class="nav-filter" type="button" data-filter="liked"><span aria-hidden="true">♡</span> Liked posts</button>
+      </nav>
+      <section class="sidebar-note">
+        <p class="eyebrow">BUILT FOR A DEMO</p>
+        <p>There are no accounts or servers here. Posts stay in this browser until you clear them.</p>
+      </section>
+    </aside>
+
+    <section class="feed-column" aria-label="Community feed">
+      <div class="page-heading">
+        <div><p class="eyebrow">COMMUNITY SPACE</p><h1>Your corner of the internet.</h1><p class="muted">Ideas, updates, and small wins — all in one place.</p></div>
+        <span class="date-chip" id="today-label">TODAY</span>
+      </div>
+
+      <section class="composer card" aria-labelledby="composer-title">
+        <div class="composer-top"><div class="avatar" aria-hidden="true">Y</div><div><h2 id="composer-title">Start a conversation</h2><p class="muted">What would you like the community to know?</p></div></div>
+        <form id="post-form">
+          <label class="sr-only" for="post-author">Display name</label>
+          <input id="post-author" name="author" type="text" maxlength="40" value="You" autocomplete="nickname" required>
+          <label class="sr-only" for="post-body">Write a post</label>
+          <textarea id="post-body" name="body" maxlength="500" rows="3" placeholder="Share an update, ask a question, or celebrate a win..." required></textarea>
+          <div class="composer-actions"><span class="muted" id="character-count">0 / 500</span><button class="button button-primary" type="submit">Publish post <span aria-hidden="true">↗</span></button></div>
+        </form>
+      </section>
+
+      <div class="feed-toolbar">
+        <div><p class="eyebrow">THE LATEST</p><h2 id="feed-title">Community feed</h2></div>
+        <div class="toolbar-controls">
+          <label class="sr-only" for="search">Search posts</label>
+          <input id="search" type="search" placeholder="Search the feed..." autocomplete="off">
+          <label class="sr-only" for="sort">Sort posts</label>
+          <select id="sort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select>
+        </div>
+      </div>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+      <div id="feed" class="feed-list" aria-live="polite"></div>
+      <footer class="feed-footer">Made for thoughtful communities <span aria-hidden="true">✳</span></footer>
+    </section>
+  </main>
+</body>
+</html>
